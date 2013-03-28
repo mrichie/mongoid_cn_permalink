@@ -58,7 +58,7 @@ module MongoidCnPermalink
         permalink_old = permalink + suffix.to_s
         suffix = suffix +1
       end
-      permalink = permalink_old
+      self.permalink = permalink_old
     end
 
     def random_permalink
@@ -66,7 +66,7 @@ module MongoidCnPermalink
     end
 
     def exist_permalink?(current_permalink)
-      self.class.where(permalink: current_permalink).first == self || !self.class.where(permalink: current_permalink).first
+      self.class.find_by_permalink(current_permalink) == self || !self.class.find_by_permalink(current_permalink)
     end
 
 
