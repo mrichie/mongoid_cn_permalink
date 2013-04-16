@@ -7,11 +7,11 @@ require "mongoid-cn-permalink/version"
 Gem::Specification.new do |s|
   s.name        = "mongoid-cn-permalink"
   s.version     = MongoidCnPermalink::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MongoidCnPermalink."
-  s.description = "TODO: Description of MongoidCnPermalink."
+  s.authors     = ["Richie Min"]
+  s.email       = ["minruiqi@gmail.com"]
+  s.homepage    = "http://rubygems.org/gems/mongoid-cn-permalink"
+  s.summary     = "Generate Permalink on Mongoid."
+  s.description = "Generate Permalink on Mongoid. Specially on stored chinese words."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
