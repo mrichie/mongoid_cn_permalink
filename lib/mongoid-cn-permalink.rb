@@ -54,7 +54,7 @@ module MongoidCnPermalink
     def create_unique_permalink
       permalink_old = permalink
       suffix = 1
-      while !exist_permalink?(permalink_old) do
+      while exist_permalink?(permalink_old) do
         permalink_old = permalink + suffix.to_s
         suffix = suffix +1
       end
@@ -66,11 +66,8 @@ module MongoidCnPermalink
     end
 
     def exist_permalink?(current_permalink)
-      self.class.find_by_permalink(current_permalink) == self || !self.class.find_by_permalink(current_permalink)
+      self.class.find_by_permalink(current_permalink) == self || !self.class.superclass.find_by_permalink(current_permalink).nil?
     end
-
-
-
   end
 
 end
