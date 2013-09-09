@@ -29,6 +29,7 @@ module MongoidCnPermalink
 
     private
     def create_permalink
+      return unless self.send("#{self.class.permalink_key}_changed?")
       self.permalink = Pinyin.t(read_attribute(self.class.permalink_key))
       remove_special_chars
       random_permalink if permalink.blank?
