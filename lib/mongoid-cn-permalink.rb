@@ -67,7 +67,7 @@ module MongoidCnPermalink
     end
 
     def exist_permalink?(current_permalink)
-      self.class.find_by_permalink(current_permalink) == self || (self.class.superclass.respond_to?('find_by_permalink') && !self.class.superclass.find_by_permalink(current_permalink).nil?
+      self.class.find_by_permalink(current_permalink) == self || (self.class.superclass.respond_to?('find_by_permalink') && !self.class.superclass.find_by_permalink(current_permalink).nil?)
     end
   end
 
